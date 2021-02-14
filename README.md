@@ -8,7 +8,7 @@ cd way-wiki-doc
 git submodule init
 ```
 
-# install mdbook
+* install mdbook and use
 ```shell
 cargo install mdbook
 OR
