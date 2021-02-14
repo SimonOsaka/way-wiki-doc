@@ -1,0 +1,6 @@
+[book]
+authors = ["许忠亮"]
+language = "zh"
+multilingual = false
+src = "src"
+title = "技术知识wiki"
