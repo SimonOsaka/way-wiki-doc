@@ -231,8 +231,8 @@
 <tr><td></td><td></td><td></td><td></td></tr>
 </tbody></table>
 <h2><a class="header" href="#nginx使用ssl" id="nginx使用ssl">nginx使用ssl</a></h2>
-<h2><a class="header" href="#使用certbot-auto配置ssl" id="使用certbot-auto配置ssl">使用certbot-auto配置ssl</a></h2>
-<h3><a class="header" href="#首次生成证书" id="首次生成证书">首次生成证书</a></h3>
+<h3><a class="header" href="#使用certbot-auto配置ssl" id="使用certbot-auto配置ssl">使用certbot-auto配置ssl</a></h3>
+<h4><a class="header" href="#首次生成证书" id="首次生成证书">首次生成证书</a></h4>
 <p>使用免费的Let's encrypt获取证书并让nginx使用，具体如下</p>
 <ol>
 <li>
@@ -253,7 +253,7 @@ chmod a+x ./certbot-auto
 </li>
 </ol>
 <hr />
-<h3><a class="header" href="#nginx配置证书" id="nginx配置证书">nginx配置证书</a></h3>
+<h4><a class="header" href="#nginx配置证书" id="nginx配置证书">nginx配置证书</a></h4>
 <ol>
 <li>在nginx的conf文件夹中，创建文件<code>ssl.conf</code></li>
 </ol>
@@ -286,7 +286,7 @@ server {
 <ol start="3">
 <li>访问域名www.jicu.vip是否正常，如果不正常问问百度。</li>
 </ol>
-<h3><a class="header" href="#配置域名自动续期" id="配置域名自动续期">配置域名自动续期</a></h3>
+<h4><a class="header" href="#配置域名自动续期" id="配置域名自动续期">配置域名自动续期</a></h4>
 <ol>
 <li>
 <p>先配置两个环境变量，最好写在/etc/profile，或者.bashrc里面，然后执行source生效</p>
@@ -333,7 +333,7 @@ crontab -l
 <p>访问http://s.tool.chinaz.com/https/检查<code>SSL</code>过期时间是否更新</p>
 </li>
 </ol>
-<h2><a class="header" href="#使用acmesh配置ssl" id="使用acmesh配置ssl">使用acme.sh配置ssl</a></h2>
+<h3><a class="header" href="#使用acmesh配置ssl" id="使用acmesh配置ssl">使用acme.sh配置ssl</a></h3>
 <ol>
 <li>
 <p>安装。查看<a href="https://github.com/acmesh-official/acme.sh/wiki/%E8%AF%B4%E6%98%8E">官方说明</a>。<em>如果是第一次使用，最好阅读一遍</em></p>
