@@ -1,0 +1,322 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Rust 安装 - 技术知识wiki</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../../favicon.png">
+        
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../way-api-wiki/基础支持/⭐️总结，先读此文.html"><strong aria-hidden="true">1.</strong> 先读此文</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Web服务器</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../way-api-wiki/WEB服务器/nginx使用ssl.html"><strong aria-hidden="true">2.1.</strong> Nginx使用SSL</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/WEB服务器/nginx本地开发加入ssl.html"><strong aria-hidden="true">2.2.</strong> Nginx本地开发加入SSL</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> 服务器OS</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.</strong> Alpine Linux</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../way-api-wiki/服务器OS/alpine/docker-rust镜像使用帮助.html"><strong aria-hidden="true">3.1.1.</strong> Docker Rust镜像使用帮助</a></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> 开发语言</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.1.</strong> Rust</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../way-api-wiki/Rust/Rust安装.html" class="active"><strong aria-hidden="true">4.1.1.</strong> Rust 安装</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/Rust/Rust常用语法总结.html"><strong aria-hidden="true">4.1.2.</strong> Rust常用语法总结</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">技术知识wiki</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2><a class="header" href="#rust-安装" id="rust-安装">Rust 安装</a></h2>
+<h4><a class="header" href="#使用vscode" id="使用vscode">使用vscode</a></h4>
+<ol>
+<li>安装rust插件</li>
+<li>安装rustup</li>
+<li>重启vscode，安装rust server</li>
+</ol>
+<h4><a class="header" href="#debug" id="debug">debug</a></h4>
+<p>安装<code>CodeLLDB</code>插件，如果有发生<em>Acquiring CodeLLDB platform package</em>，执行<a href="https://github.com/vadimcn/vscode-lldb/releases/">离线下载</a>对应版本。在扩展里，选择<code>···</code>，选择<code>从VSIX安装</code>，选择下载好的<code>*.vsix</code>文件，安装重启。</p>
+<h4><a class="header" href="#问题rustup下载慢" id="问题rustup下载慢">问题：rustup下载慢</a></h4>
+<pre><code class="language-shell"># 执行如下两行在命令行中
+export RUSTUP_DIST_SERVER=&quot;https://mirrors.ustc.edu.cn/rust-static&quot;
+export RUSTUP_UPDATE_ROOT=&quot;https://mirrors.ustc.edu.cn/rust-static/rustup&quot;
+</code></pre>
+<p>修改后，继续执行安装。</p>
+<h2><a class="header" href="#cargo国内源" id="cargo国内源">Cargo国内源</a></h2>
+<ul>
+<li>清华tuna源</li>
+<li>中科大ustc源</li>
+</ul>
+<pre><code class="language-shell">[source.crates-io]
+replace-with = 'tuna'
+
+[source.ustc]
+registry = &quot;git://mirrors.ustc.edu.cn/crates.io-index&quot;
+
+[source.tuna]
+registry = &quot;https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git&quot;
+</code></pre>
+<h2><a class="header" href="#rust升级" id="rust升级">Rust升级</a></h2>
+<h4><a class="header" href="#rustup-update更新慢" id="rustup-update更新慢">rustup update更新慢</a></h4>
+<pre><code class="language-shell"># 执行如下命令，该命令只是一段，全部内容去清华mirror的rust页面中查看
+vi ~/.bash_profile
+export RUSTUP_DIST_SERVER=https://mirrors.tuna.tsinghua.edu.cn/rustup rustup install stable
+</code></pre>
+<p>或者</p>
+<pre><code class="language-shell">vi ~/.bash_profile
+export RUSTUP_DIST_SERVER=http://mirrors.rustcc.cn
+export RUSTUP_UPDATE_ROOT=http://mirrors.rustcc.cn/rustup rustup install stable
+</code></pre>
+<p>或者</p>
+<pre><code class="language-shell">vi ~/.bash_profile
+export RUSTUP_UPDATE_ROOT=http://mirrors.ustc.edu.cn/rust-static/rustup
+export RUSTUP_DIST_SERVER=http://mirrors.ustc.edu.cn/rust-static
+</code></pre>
+<p><code>source ~/.bash_profile</code>再次执行更新即可。</p>
+<h2><a class="header" href="#rust交叉编译" id="rust交叉编译">Rust交叉编译</a></h2>
+<p>开发在Mac，产品最后运行在Linux。两种环境编译的二进制包是无法在彼此环境上运行的。</p>
+<h4><a class="header" href="#macos编译linux运行" id="macos编译linux运行">macOS编译，linux运行</a></h4>
+<pre><code class="language-shell">x# 查看可用的目标环境rustup target list# 引入linux静态编译包rustup target add x86_64-unknown-linux-musl# 执行编译	cargo build --release --target=x86_64-unknown-linux-muslFinished release [optimized] target(s) in 54.64s####################################################### 说明编译成功！！！# 在target/x86_64-unknown-linux-musl/release目录内获得。######################################################shell
+</code></pre>
+<h4><a class="header" href="#编译过程中发生错误" id="编译过程中发生错误">编译过程中发生错误</a></h4>
+<h5><a class="header" href="#提示binsh-musl-gcc-command-not-found" id="提示binsh-musl-gcc-command-not-found">提示：/bin/sh: musl-gcc: command not found</a></h5>
+<pre><code class="language-shell"># 安装
+brew install filosottile/musl-cross/musl-cross
+
+# 编辑cargo
+vi $HOME/.cargo/config
+# 加入如下内容，保存
+[target.x86_64-unknown-linux-musl]
+linker = &quot;x86_64-linux-musl-gcc&quot;
+
+# 执行目标linux平台的编译命令
+# 如果提示OPENSSL_DIR unset，但是环境变量一直都可用，解决方案是把OPENSSL_DIR=&quot;/usr/local/opt/openssl@1.1&quot; 加入到命令前面
+CC_x86_64_unknown_linux_musl=&quot;x86_64-linux-musl-gcc&quot; cargo build --release --target=x86_64-unknown-linux-musl
+</code></pre>
+<h5><a class="header" href="#提示openssl-err的错误" id="提示openssl-err的错误">提示：openssl err的错误</a></h5>
+<pre><code class="language-shell"># 安装openssl 1.1
+brew install openssl@1.1
+
+# 修改环境变量
+vi ~/.bash_profile
+export OPENSSL_DIR=&quot;/usr/local/opt/openssl@1.1&quot; # 根据实际目录填写，这是brew默认安装目录
+# 保存退出
+
+# 执行source完成
+source ~/.bash_profile
+</code></pre>
+<h5><a class="header" href="#提示ring-xxxxx编译问题没有找到文件或目录" id="提示ring-xxxxx编译问题没有找到文件或目录">提示ring-x.xx.xx编译问题，没有找到文件或目录</a></h5>
+<pre><code class="language-shell"># 切换为清华源tuna
+[source.crates-io]
+replace-with = 'tuna'
+
+[source.tuna]
+registry = &quot;https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git&quot;
+</code></pre>
+<p>参考：<a href="https://www.qttc.net/529-rust-cross-compile-mac-to-linux.html">https://www.qttc.net/529-rust-cross-compile-mac-to-linux.html</a></p>
+<p>参考：<a href="https://blog.csdn.net/u013195275/article/details/106070326/">https://blog.csdn.net/u013195275/article/details/106070326/</a></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../way-api-wiki/服务器OS/alpine/docker-rust镜像使用帮助.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../way-api-wiki/Rust/Rust常用语法总结.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../way-api-wiki/服务器OS/alpine/docker-rust镜像使用帮助.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../way-api-wiki/Rust/Rust常用语法总结.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
