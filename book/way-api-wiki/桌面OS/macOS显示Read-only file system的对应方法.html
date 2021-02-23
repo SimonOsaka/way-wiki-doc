@@ -1,0 +1,323 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>macOS显示Read-only file system的对应方法 - 技术知识wiki</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../../favicon.png">
+        
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../way-api-wiki/基础支持/⭐️总结，先读此文.html"><strong aria-hidden="true">1.</strong> 先读此文</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Web服务器</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../way-api-wiki/WEB服务器/nginx使用ssl.html"><strong aria-hidden="true">2.1.</strong> Nginx使用SSL</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/WEB服务器/nginx本地开发加入ssl.html"><strong aria-hidden="true">2.2.</strong> Nginx本地开发加入SSL</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/WEB服务器/Tengine开启http2.html"><strong aria-hidden="true">2.3.</strong> Tengine开启http2</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> 服务器OS</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.</strong> Alpine Linux</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../way-api-wiki/服务器OS/alpine/docker-rust镜像使用帮助.html"><strong aria-hidden="true">3.1.1.</strong> Docker Rust镜像使用帮助</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.2.</strong> CentOS</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../way-api-wiki/服务器OS/CentOS/CentOS7常见问题解决.html"><strong aria-hidden="true">3.2.1.</strong> CentOS7常见问题解决</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/服务器OS/CentOS/CentOS7日常操作命令.html"><strong aria-hidden="true">3.2.2.</strong> CentOS7日常操作命令</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/服务器OS/CentOS/CentOS7挖矿病毒清理.html"><strong aria-hidden="true">3.2.3.</strong> CentOS7挖矿病毒清理</a></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> 桌面OS</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.1.</strong> Manjaro</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../way-api-wiki/桌面OS/manjaro.html"><strong aria-hidden="true">4.1.1.</strong> Manjaro基本使用</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.2.</strong> MacOS</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../way-api-wiki/桌面OS/macOS抓包.html"><strong aria-hidden="true">4.2.1.</strong> macOS抓包</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/桌面OS/macOS显示Read-only file system的对应方法.html" class="active"><strong aria-hidden="true">4.2.2.</strong> macOS显示Read-only file system的对应方法</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/桌面OS/macOS系统空间占用过大.html"><strong aria-hidden="true">4.2.3.</strong> macOS系统空间占用过大</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/桌面OS/macOS我的软件.html"><strong aria-hidden="true">4.2.4.</strong> macOS我的软件</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/桌面OS/macOS刷新DNS缓存.html"><strong aria-hidden="true">4.2.5.</strong> macOS刷新DNS缓存</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/桌面OS/macOS使用fork的基本功能（git图形客户端）.html"><strong aria-hidden="true">4.2.6.</strong> macOS使用fork的基本功能（git图形客户端）</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/桌面OS/macOS浏览器safari请求http跳转到https.html"><strong aria-hidden="true">4.2.7.</strong> macOS浏览器safari请求http跳转到https</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/桌面OS/macOS不安装XCode使用CLion开发.html"><strong aria-hidden="true">4.2.8.</strong> macOS不安装XCode使用CLion开发</a></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> 开发语言</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">5.1.</strong> Rust</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../way-api-wiki/Rust/Rust安装.html"><strong aria-hidden="true">5.1.1.</strong> Rust 安装</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/Rust/Rust常用语法总结.html"><strong aria-hidden="true">5.1.2.</strong> Rust常用语法总结</a></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Git</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../way-api-wiki/Git/GIT多Sshkeys管理.html"><strong aria-hidden="true">6.1.</strong> Git多ssh keys管理</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/Git/github相关链接访问慢、失效问题.html"><strong aria-hidden="true">6.2.</strong> github相关链接访问慢、失效问题</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">技术知识wiki</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2><a class="header" href="#macos-catalina显示read-only-file-system的对应方法" id="macos-catalina显示read-only-file-system的对应方法">MacOS (Catalina)：显示Read-only file system的对应方法</a></h2>
+<p>在Catalina版的macOS上以root身份登录，发现创建类似/data之类的目录会会提示Read-only file system，这篇文章介绍一下原因和对应方法。</p>
+<h3><a class="header" href="#os版本" id="os版本">OS版本</a></h3>
+<pre><code class="language-shell">liumiaocn:util liumiao$ sw_vers
+ProductName:	Mac OS X
+ProductVersion:	10.15.2
+BuildVersion:	19C57
+liumiaocn:util liumiao$ 
+</code></pre>
+<h3><a class="header" href="#现象" id="现象">现象</a></h3>
+<pre><code class="language-shell">liumiaocn:/ root# id
+uid=0(root) gid=0(wheel) groups=0(wheel),1(daemon),2(kmem),3(sys),4(tty),5(operator),8(procview),9(procmod),12(everyone),20(staff),29(certusers),61(localaccounts),80(admin),701(com.apple.sharepoint.group.1),33(_appstore),98(_lpadmin),100(_lpoperator),204(_developer),250(_analyticsusers),395(com.apple.access_ftp),398(com.apple.access_screensharing),399(com.apple.access_ssh),400(com.apple.access_remote_ae)
+liumiaocn:/ root# mkdir -p /data
+mkdir: /data: Read-only file system
+liumiaocn:/ root# 
+</code></pre>
+<h3><a class="header" href="#原因" id="原因">原因</a></h3>
+<p>根据官方提示，升级至Catalina之后，硬盘会分为两部分：</p>
+<ul>
+<li>只读部分</li>
+<li>可写部分</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20200215112038738.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xpdW1pYW9jbg==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<blockquote>
+<p>With macOS Catalina, you can no longer store files or data in the read-only system volume, nor can you write to the “root” directory ( / ) from the command line, such as with Terminal.</p>
+</blockquote>
+<p>在Catalina版本，使用者无法在只读系统卷进行数据的存储，使用root在通过命令行的方式也无法对/根目录下进行写操作了。</p>
+<p>详细可参看：https://support.apple.com/en-us/HT210650</p>
+<h3><a class="header" href="#对应方法" id="对应方法">对应方法</a></h3>
+<p>首先设定SIP，详细可参看：https://liumiaocn.blog.csdn.net/article/details/104328486</p>
+<pre><code class="language-shell">liumiaocn:~ root# csrutil status
+System Integrity Protection status: disabled.
+liumiaocn:~ root# mkdir -p /data
+mkdir: /data: Read-only file system
+liumiaocn:~ root#
+</code></pre>
+<p>可以看到此时仍然无法创建目录，因为/仍然是只读方式, 修改一下/使之具有write的权限可以看到即可进行操作：</p>
+<pre><code class="language-shell">liumiaocn:~ root# mount -uw /
+liumiaocn:~ root# mkdir -p /data
+liumiaocn:~ root# 
+</code></pre>
+<h3><a class="header" href="#注意事项" id="注意事项">注意事项</a></h3>
+<p>注意此种方式如果重启，mount设定的/的write属性就会失去</p>
+<pre><code class="language-shell">liumiaocn:~ root# ls /data
+liumiaocn:~ root# mkdir -p /test
+mkdir: /test: Read-only file system
+liumiaocn:~ root# csrutil status
+System Integrity Protection status: disabled.
+liumiaocn:~ root# 
+</code></pre>
+<p>这种情况下可以使用软连接的方式解决这个问题</p>
+<pre><code class="language-shell">liumiaocn:/ root# mount -uw /
+liumiaocn:/ root# rm -rf /data/
+liumiaocn:/ root# mkdir -p /usr/local/data
+liumiaocn:/ root# 
+</code></pre>
+<p>创建软连接</p>
+<pre><code class="language-shell">liumiaocn:/ root# ln -s /usr/local/data /data
+liumiaocn:/ root# ls -l /data
+lrwxr-xr-x  1 root  admin  15 Feb 15 16:32 /data -&gt; /usr/local/data
+liumiaocn:/ root#
+</code></pre>
+<p>这样在重启之后就没有问题了，详细可参看如下日志：</p>
+<pre><code class="language-shell">liumiaocn:~ root# mkdir /test
+mkdir: /test: Read-only file system
+liumiaocn:~ root# cd /data
+liumiaocn:data root# mkdir test
+liumiaocn:data root# ls
+test
+liumiaocn:data root# 
+</code></pre>
+<p>————————————————
+版权声明：本文为CSDN博主「liumiaocn」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/liumiaocn/article/details/104324664</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../way-api-wiki/桌面OS/macOS抓包.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../way-api-wiki/桌面OS/macOS系统空间占用过大.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../way-api-wiki/桌面OS/macOS抓包.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../way-api-wiki/桌面OS/macOS系统空间占用过大.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

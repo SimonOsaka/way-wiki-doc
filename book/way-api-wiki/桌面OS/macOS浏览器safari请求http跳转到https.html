@@ -1,0 +1,315 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>macOS浏览器safari请求http跳转到https - 技术知识wiki</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../../favicon.png">
+        
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+        
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../way-api-wiki/基础支持/⭐️总结，先读此文.html"><strong aria-hidden="true">1.</strong> 先读此文</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Web服务器</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../way-api-wiki/WEB服务器/nginx使用ssl.html"><strong aria-hidden="true">2.1.</strong> Nginx使用SSL</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/WEB服务器/nginx本地开发加入ssl.html"><strong aria-hidden="true">2.2.</strong> Nginx本地开发加入SSL</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/WEB服务器/Tengine开启http2.html"><strong aria-hidden="true">2.3.</strong> Tengine开启http2</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> 服务器OS</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.</strong> Alpine Linux</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../way-api-wiki/服务器OS/alpine/docker-rust镜像使用帮助.html"><strong aria-hidden="true">3.1.1.</strong> Docker Rust镜像使用帮助</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.2.</strong> CentOS</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../way-api-wiki/服务器OS/CentOS/CentOS7常见问题解决.html"><strong aria-hidden="true">3.2.1.</strong> CentOS7常见问题解决</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/服务器OS/CentOS/CentOS7日常操作命令.html"><strong aria-hidden="true">3.2.2.</strong> CentOS7日常操作命令</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/服务器OS/CentOS/CentOS7挖矿病毒清理.html"><strong aria-hidden="true">3.2.3.</strong> CentOS7挖矿病毒清理</a></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> 桌面OS</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.1.</strong> Manjaro</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../way-api-wiki/桌面OS/manjaro.html"><strong aria-hidden="true">4.1.1.</strong> Manjaro基本使用</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.2.</strong> MacOS</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../way-api-wiki/桌面OS/macOS抓包.html"><strong aria-hidden="true">4.2.1.</strong> macOS抓包</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/桌面OS/macOS显示Read-only file system的对应方法.html"><strong aria-hidden="true">4.2.2.</strong> macOS显示Read-only file system的对应方法</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/桌面OS/macOS系统空间占用过大.html"><strong aria-hidden="true">4.2.3.</strong> macOS系统空间占用过大</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/桌面OS/macOS我的软件.html"><strong aria-hidden="true">4.2.4.</strong> macOS我的软件</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/桌面OS/macOS刷新DNS缓存.html"><strong aria-hidden="true">4.2.5.</strong> macOS刷新DNS缓存</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/桌面OS/macOS使用fork的基本功能（git图形客户端）.html"><strong aria-hidden="true">4.2.6.</strong> macOS使用fork的基本功能（git图形客户端）</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/桌面OS/macOS浏览器safari请求http跳转到https.html" class="active"><strong aria-hidden="true">4.2.7.</strong> macOS浏览器safari请求http跳转到https</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/桌面OS/macOS不安装XCode使用CLion开发.html"><strong aria-hidden="true">4.2.8.</strong> macOS不安装XCode使用CLion开发</a></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> 开发语言</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">5.1.</strong> Rust</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../way-api-wiki/Rust/Rust安装.html"><strong aria-hidden="true">5.1.1.</strong> Rust 安装</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/Rust/Rust常用语法总结.html"><strong aria-hidden="true">5.1.2.</strong> Rust常用语法总结</a></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Git</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../way-api-wiki/Git/GIT多Sshkeys管理.html"><strong aria-hidden="true">6.1.</strong> Git多ssh keys管理</a></li><li class="chapter-item expanded "><a href="../../way-api-wiki/Git/github相关链接访问慢、失效问题.html"><strong aria-hidden="true">6.2.</strong> github相关链接访问慢、失效问题</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">技术知识wiki</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <blockquote>
+<p>开发时，当safari地址栏输入<strong>http</strong>://localhost，却跳转到<strong>https</strong>://localhost的问题，百思不得其解。搜索baidu毛都没有。</p>
+</blockquote>
+<p>解决方案如下：</p>
+<ol>
+<li>打开safari</li>
+<li>快捷键<code>command + ,</code></li>
+<li>隐私 -&gt; 管理网站数据</li>
+<li>搜索<code>localhost</code></li>
+<li>点击<code>移除</code></li>
+</ol>
+<h4><a class="header" href="#参考" id="参考">参考</a></h4>
+<ul>
+<li><a href="https://apple.stackexchange.com/questions/215077/safari-redirecting-http-to-non-existent-https">Safari Redirecting http to (non-existent) https</a></li>
+</ul>
+<h4><a class="header" href="#学习" id="学习">学习</a></h4>
+<h2><a class="header" href="#什么是hsts" id="什么是hsts">什么是HSTS？</a></h2>
+<h3><a class="header" href="#1-strict-transport-security" id="1-strict-transport-security">1. Strict-Transport-Security</a></h3>
+<p><a href="http://tools.ietf.org/html/rfc6797">HTTP Strict Transport Security</a>，简称为HSTS。它允许一个HTTPS网站，要求浏览器总是通过HTTPS来访问它。现阶段，除了Chrome浏览器，Firefox4+，以及Firefox的NoScript扩展都支持这个响应头。</p>
+<p>我们知道HTTPS相对于HTTP有更好的安全性，而很多HTTPS网站，也可以通过HTTP来访问。开发人员的失误或者用户主动输入地址，都有可能导致用户以HTTP访问网站，降低了安全性。一般，我们会通过Web Server发送301/302重定向来解决这个问题。现在有了HSTS，可以让浏览器帮你做这个跳转，省一次HTTP请求。</p>
+<p>要使用HSTS，只需要在你的<strong>HTTPS</strong>网站响应头中，加入下面这行：</p>
+<pre><code class="language-http">strict-transport-security: max-age=16070400; includeSubDomains
+</code></pre>
+<p>includeSubDomains是可选的，用来指定是否作用于子域名。支持HSTS的浏览器遇到这个响应头，会把当前网站加入HSTS列表，然后在max-age指定的秒数内，当前网站所有请求都会被重定向为https。即使用户主动输入http://或者不输入协议部分，都将重定向到https://地址。</p>
+<p>Chrome内置了一个HSTS列表，默认包含Google、Paypal、Twitter、Linode等等服务。我们也可以在Chrome输入chrome://net-internals/#hsts，进入HSTS管理界面。在这个页面，你可以增加/删除/查询HSTS记录。例如，你想一直以https访问某网址，通过“add Domain”加上去就好了。查看Chrome内置的全部HSTS列表，或者想把自己的网站加入这个列表，请<a href="http://www.chromium.org/sts">点这里</a>。</p>
+<h3><a class="header" href="#2-x-frame-options" id="2-x-frame-options">2. X-Frame-Options</a></h3>
+<p><a href="http://tools.ietf.org/html/draft-ietf-websec-x-frame-options-01">X-Frame-Options</a>，已经转正为<a href="http://tools.ietf.org/html/draft-ietf-websec-frame-options-00">Frame-Options</a>，但现阶段使用最好还是带上X-。Chrome4+、Firefox3.6.9+、IE8+均支持，详细的浏览器支持情况<a href="https://developer.mozilla.org/en-US/docs/HTTP/X-Frame-Options?redirectlocale=en-US&amp;redirectslug=The_X-FRAME-OPTIONS_response_header#Browser_compatibility">看这里</a>。使用方式如下：</p>
+<pre><code class="language-http">x-frame-options: SAMEORIGIN
+</code></pre>
+<p>这个响应头支持三种配置：</p>
+<ul>
+<li>DENY：不允许被任何页面嵌入；</li>
+<li>SAMEORIGIN：不允许被本域以外的页面嵌入；</li>
+<li>ALLOW-FROM uri：不允许被指定的域名以外的页面嵌入（Chrome现阶段不支持）；</li>
+</ul>
+<p>如果某页面被不被允许的页面以<iframe>或<frame>的形式嵌入，IE会显示类似于“此内容无法在框架中显示”的提示信息，Chrome和Firefox都会在控制台打印信息。由于嵌入的页面不会加载，这就减少了点击劫持（Clickjacking）的发生。</p>
+<h3><a class="header" href="#3-x-xss-protection" id="3-x-xss-protection">3. X-XSS-Protection</a></h3>
+<p>顾名思义，这个响应头是用来防范XSS的。较早我是在介绍IE8的文章里看到这个，现在主流浏览器都支持，并且默认都开启了XSS保护，用这个header可以关闭它。它有几种配置：</p>
+<ul>
+<li>0：禁用XSS保护；</li>
+<li>1：启用XSS保护；</li>
+<li>1; mode=block：启用XSS保护，并在检查到XSS攻击时，停止渲染页面（例如IE8中，检查到攻击时，整个页面会被一个#替换）；</li>
+</ul>
+<p>浏览器提供的XSS保护机制并不完美，但是开启后仍然可以提升攻击难度，总之没有特别的理由，不要关闭它。</p>
+<h3><a class="header" href="#4-x-content-type-options" id="4-x-content-type-options">4. X-Content-Type-Options</a></h3>
+<p>互联网上的资源有各种类型，通常浏览器会根据响应头的Content-Type字段来分辨它们的类型。例如：&quot;text/html&quot;代表html文档，&quot;image/png&quot;是PNG图片，&quot;text/css&quot;是CSS样式文档。然而，有些资源的Content-Type是错的或者未定义。这时，某些浏览器会启用MIME-sniffing来猜测该资源的类型，解析内容并执行。</p>
+<p>例如，我们即使给一个html文档指定Content-Type为&quot;text/plain&quot;，在IE8-中这个文档依然会被当做html来解析。利用浏览器的这个特性，攻击者甚至可以让原本应该解析为图片的请求被解析为JavaScript。通过下面这个响应头可以禁用浏览器的类型猜测行为：</p>
+<pre><code class="language-http">X-Content-Type-Options: nosniff
+</code></pre>
+<p>这个响应头的值只能是nosniff，可用于IE8+和Chrome。另外，它还被Chrome用于扩展下载，<a href="https://developer.chrome.com/extensions/hosting.html">见这里</a>。</p>
+<h3><a class="header" href="#5-x-content-security-policy" id="5-x-content-security-policy">5. X-Content-Security-Policy</a></h3>
+<p>这个响应头主要是用来定义页面可以加载哪些资源，减少XSS的发生。之前单独介绍过，请点击继续浏览：Content Security Policy介绍。</p>
+<h3><a class="header" href="#别人怎么用" id="别人怎么用">别人怎么用</a></h3>
+<p>最后，我们来看看几个实际案例：</p>
+<p>Google+，使用了这几个本文提到的响应头：</p>
+<pre><code class="language-http">BASHx-content-type-options: nosniff  x-frame-options: SAMEORIGIN  x-xss-protection: 1; mode=block
+</code></pre>
+<p>Twitter使用了这些：</p>
+<pre><code class="language-http">BASHstrict-transport-security: max-age=631138519  x-frame-options: SAMEORIGIN  x-xss-protection: 1; mode=block
+</code></pre>
+<p>PayPal的：</p>
+<pre><code class="language-http">BASHX-Frame-Options: SAMEORIGIN  Strict-Transport-Security: max-age=14400
+</code></pre>
+<p>Facebook则使用了这些（配置了详细的CSP，关闭了XSS保护）：</p>
+<pre><code class="language-http">BASHstrict-transport-security: max-age=60  x-content-type-options: nosniff  x-frame-options: DENY  x-xss-protection: 0  content-security-policy: default-src *;script-src https://*.facebook.com http://*.facebook.com https://*.fbcdn.net http://*.fbcdn.net *.facebook.net *.google-analytics.com *.virtualearth.net *.google.com 127.0.0.1:* *.spotilocal.com:* chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl 'unsafe-inline' 'unsafe-eval' https://*.akamaihd.net http://*.akamaihd.net;style-src * 'unsafe-inline';connect-src https://*.facebook.com http://*.facebook.com https://*.fbcdn.net http://*.fbcdn.net *.facebook.net *.spotilocal.com:* https://*.akamaihd.net ws://*.facebook.com:* http://*.akamaihd.net https://fb.scanandcleanlocal.com:*;
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../way-api-wiki/桌面OS/macOS使用fork的基本功能（git图形客户端）.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../way-api-wiki/桌面OS/macOS不安装XCode使用CLion开发.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../way-api-wiki/桌面OS/macOS使用fork的基本功能（git图形客户端）.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../../way-api-wiki/桌面OS/macOS不安装XCode使用CLion开发.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
