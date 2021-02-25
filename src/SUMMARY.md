@@ -6,6 +6,7 @@
   - [Nginx本地开发加入SSL](way-api-wiki/WEB服务器/nginx本地开发加入ssl.md)
   - [Tengine开启http2](way-api-wiki/WEB服务器/Tengine开启http2.md)
 - [服务器OS]()
+  - [Linux基础](way-api-wiki/服务器OS/linux基础.md)
   - [Alpine Linux]()
     - [Docker Rust镜像使用帮助](way-api-wiki/服务器OS/alpine/docker-rust镜像使用帮助.md)
   - [CentOS]()
