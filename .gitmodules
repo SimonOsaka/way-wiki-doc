@@ -1,3 +1,3 @@
 [submodule "src/way-api-wiki"]
 	path = src/way-api-wiki
-	url = https://github.com/SimonOsaka/way-api-wiki.git
+url=git@github.com:SimonOsaka/way-api-wiki.git
