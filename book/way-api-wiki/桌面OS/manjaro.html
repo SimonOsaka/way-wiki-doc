@@ -259,62 +259,52 @@
 <li>
 <p>日常软件</p>
 <ul>
-<li>搜狗输入法、四叶草输入法</li>
-<li>Google Chrome</li>
-<li>LibreOffice</li>
-<li>Typora</li>
-<li>kate</li>
+<li><code>搜狗输入法</code>、四叶草输入法</li>
+<li><code>Google Chrome</code></li>
+<li><code>LibreOffice</code></li>
+<li><code>Typora</code></li>
+<li><code>kate</code></li>
 </ul>
 </li>
 <li>
 <p>开发IDE</p>
 <ul>
-<li>IDEA 社区版</li>
-<li>Virtual Studio Code</li>
+<li><code>IDEA 社区版</code></li>
+<li><code>Virtual Studio Code</code></li>
 </ul>
 </li>
 <li>
 <p>版本控制</p>
 <ul>
-<li>GIT</li>
-<li>GitAhead</li>
+<li><code>GIT</code></li>
+<li><code>GitAhead</code></li>
 </ul>
 </li>
 <li>
 <p>数据库</p>
 <ul>
-<li>Navicat、Dbeaver</li>
-<li>PostgreSql</li>
+<li><code>Navicat</code>、Dbeaver</li>
+<li><code>PostgreSql</code></li>
 <li>redis-desktop-manager</li>
 </ul>
 </li>
 <li>
 <p>其它</p>
 <ul>
-<li>
-<p>JDK（OpenJDK、Amazon Corretto ...）</p>
+<li><code>JDK</code>（OpenJDK、Amazon Corretto ...）</li>
+<li><code>Rust</code></li>
+<li><code>Termius</code></li>
+<li><code>FileZilla</code></li>
+<li><code>Docker</code>、Podman</li>
+<li><code>SwitchHosts!</code></li>
+<li><code>Postman</code></li>
+<li>unrar</li>
+</ul>
 </li>
 <li>
-<p>Rust</p>
-</li>
-<li>
-<p>Termius</p>
-</li>
-<li>
-<p>FileZilla</p>
-</li>
-<li>
-<p>Docker、Podman</p>
-</li>
-<li>
-<p>SwitchHosts!</p>
-</li>
-<li>
-<p>Postman</p>
-</li>
-<li>
-<p>unrar</p>
-</li>
+<p>美化</p>
+<ul>
+<li><code>dockbarX</code>类似ubuntu左侧栏，可以将app锁定在栏内方便使用。也可以将其认为是MacOS的dock栏。</li>
 </ul>
 </li>
 </ul>
@@ -323,11 +313,11 @@
 <p>一般使用pacman或yay能完成安装，奈何有一些应用没有提供，所以需要加入额外的操作过程。</p>
 </blockquote>
 <ul>
-<li>使用pacman安装🚀🚀🚀🚀🚀</li>
-<li>使用yay安装🚀🚀🚀🚀🚀</li>
-<li>单独对PKGBUILD文件进行编辑并执行<code>makepkg -si</code>🚀🚀🚀🚀</li>
-<li>使用snap安装🚀🚀</li>
-<li>使用brew安装🚀🚀</li>
+<li>使用<code>pacman</code>安装🚀🚀🚀🚀🚀</li>
+<li>使用<code>yay</code>安装🚀🚀🚀🚀🚀</li>
+<li>单独对<code>PKGBUILD</code>文件进行编辑并执行<code>makepkg -si</code>🚀🚀🚀🚀</li>
+<li>使用<code>snap</code>安装🚀🚀</li>
+<li>使用<code>brew</code>安装🚀🚀</li>
 </ul>
 
                     </main>
@@ -367,6 +357,21 @@
 
         </div>
 
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3000/__livereload");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
         
 
         
